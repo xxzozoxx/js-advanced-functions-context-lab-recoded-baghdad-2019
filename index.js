@@ -49,11 +49,12 @@ let records = this.map(r => createEmployeeRecord.call(this,r));
 return records;
 }
 
-function findEmployeebyFirstName(firstName) {
-    this.find(name => name.firstName === firstName)
-    return this;
-}
 
+function findEmployeebyFirstName(records, firstName) {
+    return records.find(function(name) {
+        return name.firstName === firstName;
+    })
+}
 function calculatePayroll(records) {
     let payroll = records.reduce(function(init, record) {
         return init + allWagesFor(record);
