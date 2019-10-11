@@ -44,11 +44,10 @@ let allWagesFor = function() {
 
     return payable
 }
-function createEmployeeRecords(arr){
-let records = this.map(r => createEmployeeRecord.call(this,r));
-return records;
+function createEmployeeRecords(record) {
+    let records = record.map(r => createEmployeeRecord(r));
+    return records;
 }
-
 
 function findEmployeebyFirstName(records, firstName) {
     return records.find(function(name) {
